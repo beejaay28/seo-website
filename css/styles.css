@@ -210,10 +210,10 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
     box-sizing: border-box;
 }
 
-.gallery-text h1{
+.gallery-text h2{
     font-size: 95px;
     line-height: 1.00;                       
-    font-weight: 700;
+    font-weight: 500;
     margin: 200px 0 20px;
     text-align: center;
     max-width: 900px;                         
