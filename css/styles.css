@@ -57,10 +57,40 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
 
 /* Body Content */
 .body-content{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 180px 20px;
+    box-sizing: border-box;
+
+    /* BG image path */
+    background-image: url('../images/toyota_bg.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+
+    color: #fff;
+    overflow: hidden;
+    isolation: isolate; 
+}
+.body-content::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.20));
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 0;
+    pointer-events: none;
+}
+.body-content h1,
+.body-content p,
+.body-content .buttons{
+    position: relative;
+    z-index: 1;
 }
 
 .body-content h1{
@@ -70,15 +100,20 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
     margin: 200px 0 20px;
     text-align: center;
     max-width: 900px;                         
-    color: #000;
+    color: #fff !important;
     letter-spacing: -2px;
+    animation: float 6s ease-in-out infinite;
+    transition: text-shadow .2s;
+    text-shadow: 0 12px 30px rgba(0,0,0,0.6);
 }
+
 .body-content p{
     font-size: 18px;
-    color: #555;
+    color: #fff !important;
     max-width: 600px;
     text-align: center;
     margin-bottom: 40px;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.5);
 }
 
 .buttons{
@@ -88,11 +123,10 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
     align-items: center;
 }
 
-.buttons a{
+.body-content .buttons a{
     text-decoration: none;
-    color: black;
+    color: #fff; 
     padding: 12px 24px;
-    
 }
 
 .buttons ul{
@@ -105,23 +139,22 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
 }
 
 .buttons ul li{
-    color: black;;
+    color: #fff; 
 }
 
-.buttons a.plain{
+.body-content .buttons a.plain{
     text-decoration: none;
     align-items: center;
-    color: #111;
+    color: #fff; 
     padding: 0;
     display: flex;
     font-weight: 400;
 }
-
-.buttons a.pill{
+.body-content .buttons a.pill{
     text-decoration: none;
-    color: #111;
-    background: #f1f1f1;
-    border: 1px solid rgba(0,0,0,0.04);
+    color: #fff; 
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.12);
     padding: 8px 18px;
     border-radius: 999px;
     display: inline-block;
@@ -130,8 +163,8 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
     font-weight: 500;
 }
 
-.buttons a.pill:hover{
-    background: #fff;
+.body-content .buttons a.pill:hover{
+    background: rgba(255,255,255,0.18);
     box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     transform: translateY(-1px);
 }
@@ -165,6 +198,34 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
   .content-pictures{
     grid-template-columns: 1fr;
   }
+}
+
+.gallery-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 250px 30px 60px;
+    margin: 20px auto;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.gallery-text h1{
+    font-size: 95px;
+    line-height: 1.00;                       
+    font-weight: 700;
+    margin: 200px 0 20px;
+    text-align: center;
+    max-width: 900px;                         
+    color: black;
+    letter-spacing: -2px;
+}
+.gallery-text p{
+    font-size: 18px;
+    color: black;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 /* Footer */
