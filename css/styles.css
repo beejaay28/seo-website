@@ -1,11 +1,19 @@
-body { font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif; }
+/* --- Base Styles --- */
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+}
 
-h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Arial, sans-serif; font-weight:700; }
+h1 { 
+    font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Arial, sans-serif; 
+    font-weight: 700; 
+}
 
 
+/* --- Navigation Bar --- */
 .navigation-bar{
     display: flex;
-    justify-content: center; 
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 18px 20px; 
@@ -46,6 +54,7 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
     border-radius: 999px;
     display: inline-block;
     transition: background .15s, color .15s;
+    font-size: 1rem;
 }
 
 .navigation-bar li a.active,
@@ -55,22 +64,21 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
     color: #111;
 }
 
-/* Body Content */
+/* --- Body Content (Hero Section) --- */
 .body-content{
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 180px 20px;
+    padding: 10vh 20px; 
+    min-height: 80vh;
     box-sizing: border-box;
 
-    /* BG image path */
     background-image: url('../images/toyota_bg.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     color: #fff;
     overflow: hidden;
     isolation: isolate; 
@@ -93,12 +101,12 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
 }
 
 .body-content h1{
-    font-size: 95px;
-    line-height: 1.00;                       
+    font-size: 8vw; 
+    line-height: 1.00;
     font-weight: 700;
-    margin: 200px 0px 20px;
+    margin: 0 0 20px;
     text-align: center;
-    max-width: 900px;                         
+    max-width: 900px;
     color: #fff !important;
     letter-spacing: -2px;
     animation: float 6s ease-in-out infinite;
@@ -107,7 +115,7 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
 }
 
 .body-content p{
-    font-size: 18px;
+    font-size: 1.125rem;
     color: #fff !important;
     max-width: 600px;
     text-align: center;
@@ -168,9 +176,10 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
     transform: translateY(-1px);
 }
 
+/* --- Content Pictures (Gallery) --- */
 .content-pictures{
-    margin: 250px auto 0;
-    max-width: 980px;
+    margin: 5rem auto 0;
+    max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     gap: 24px;
@@ -182,12 +191,10 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
     overflow: hidden;
     border-radius: 12px;
     background: #fff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Enhanced shadow */
-    transition: transform 0.3s ease
-    , box-shadow 0.3s ease;
-    max-width: 600px; /* Max width for individual items */
-    margin: 0 auto;
-    border-top: 4px solid var(--primary-bcolor); /* Accent border */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0;
+    border-top: 4px solid var(--primary-bcolor);
 }
 
 .gallery-item:hover{
@@ -197,36 +204,31 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
 
 .gallery-item img {
     width: 100%;
-    height: 500px;
+    height: 400px;
     object-fit: cover;
     display: block;
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-@media (max-width: 700px){
-  .content-pictures{
-    grid-template-columns: 1fr;
-  }
-}
-
+/* --- Gallery Text Section --- */
 .gallery-text{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 250px 30px 60px;
+    padding: 10vh 30px 60px; 
     margin: 20px auto;
     flex-direction: column;
     box-sizing: border-box;
 }
 
 .gallery-text h2{
-    font-size: 95px;
-    line-height: 1.00;                       
+    font-size: 8vw; 
+    line-height: 1.00;
     font-weight: 500;
     margin: 200px 0 20px;
     text-align: center;
-    max-width: 900px;                         
+    max-width: 900px;
     color: black;
     letter-spacing: -2px;
 }
@@ -238,15 +240,132 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
     margin-bottom: 40px;
 }
 
+/* --- Specs & Features (Responsive Grid/Table Layout) --- */
+.specs-container {
+    max-width: 900px; 
+    width: 90%;
+    margin: 50px auto; 
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.specs-container h2 {
+    font-family: 'Avenir Next', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.specs-table-grid {
+    display: grid;
+    /* Two columns: Label (60%), Value (40%) */
+    grid-template-columns: 6fr 4fr;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.spec-row {
+    display: contents; 
+    font-size: 1.05rem;
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+/* --- TABLE STYLING --- */
+
+/* Base cell styling (TH and TD equivalent) */
+.spec-label, .spec-value {
+    padding: 18px 25px; /* More padding for readability */
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+/* Styling for the label cell (left column, TH equivalent) */
+.spec-label {
+    background-color: #fff; /* White background */
+    color: #555;
+    font-weight: 500;
+}
+
+/* Styling for the value cell (right column, TD equivalent) */
+.spec-value {
+    background-color: #fff;
+    font-weight: 600;
+    color: #555;
+    text-align: right;
+    border-left: 1px solid #eee;
+}
+
+/* Striped rows (targets every even spec-row and styles its children) */
+.specs-table-grid .spec-row:nth-of-type(even) .spec-label {
+    background-color: #fcfcfc; /* Light gray for even rows */
+}
+.specs-table-grid .spec-row:nth-of-type(even) .spec-value {
+    background-color: #fcfcfc;
+}
+
+/* --- HOVER EFFECT --- */
+/* Target all cells within the hovered row */
+.specs-table-grid .spec-row:hover .spec-label,
+.specs-table-grid .spec-row:hover .spec-value {
+    background-color: #1abc9c; /* Primary color on hover */
+    color: #fff; /* White text on hover */
+    cursor: pointer;
+}
+.specs-table-grid .spec-row:hover .spec-value {
+    border-left-color: #333; /* Darker line on hover */
+}
+
+
+/* Remove bottom border from the last row */
+.specs-table-grid > div:last-child .spec-label,
+.specs-table-grid > div:last-child .spec-value {
+    border-bottom: none;
+}
+
+/* --- Styling for the Section Headers (TH-like header bar) --- */
+.spec-row-header {
+    display: contents;
+    grid-column: 1 / -1; 
+}
+
+.header-title {
+    grid-column: 1 / -1;
+    padding: 18px 25px; /* Use same padding as cells */
+    background-color: #333; /* Dark background */
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase; /* Uppercase text */
+}
+
+/* Gap and secondary header color */
+.feature-header {
+    grid-column: 1 / -1; 
+}
+
+.feature-header .header-title {
+    padding-top: 25px; 
+    margin-top: 25px; 
+    border-top: 1px solid #ddd;
+    background-color: #555; /* Slightly different dark color for Features */
+}
+
+
+/* --- FAQ Section --- */
 .faq-section{
     background-color: #ffffff;
-    padding: 30px;
+    padding: 1.5rem; 
     border-radius: 8px;
-    width: 100%;
+    width: 90%; 
     max-width: 900px;
-    margin: auto;
-    font-size: 22px;
-    margin-top: 2.5em;
+    margin: 2.5em auto; 
+    font-size: 1.125rem; 
 }
 
 .faq-section h2{
@@ -255,14 +374,11 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
     margin-bottom: 1em;
 }
 
-
-
 .faq-item{
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 15px;
     overflow: hidden;
-
 }
 
 .faq-item p{
@@ -272,13 +388,12 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
     padding: 10px 20px;
     color: #555;
     line-height: 1.6;
-    transition: max-height 0.3s ease-out
-    , padding 0.3s ease-out;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
 }
 
 .faq-question {
     background-color: #eee;
-    font-size: 15px;
+    font-size: 1rem;
     color: #857f7f;
     padding: 15px 20px;
     cursor: pointer;
@@ -291,13 +406,12 @@ h1 { font-family: 'Avenir Next', 'Avenir', 'Proxima Nova', 'Helvetica Neue', Ari
 details[open] .faq-answer {
     max-height: 200px;
     padding: 15px 20px;
-    transition: max-height 0.3s ease-in
-    , padding 0.3s ease-in;
-  }
-  .faq-question:focus {
+    transition: max-height 0.3s ease-in, padding 0.3s ease-in;
+}
+.faq-question:focus {
     outline: 2px solid #0056b3;
     outline-offset: -2px;
-  }
+}
 
 .faq-question::before {
     content: '+';
@@ -306,23 +420,156 @@ details[open] .faq-answer {
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.2em;
-    transition: transform 0.3s ease;
-    color: var(--primary-color);
-  }
-  details[open] .faq-question::before {
+}
+details[open] .faq-question::before {
     content: '-';
     transform: translateY(-50%) rotate(180deg);
-  }
-  
-/* Footer */
+}
+
+/* --- Footer --- */
 footer{
-    margin-top: 100px;
+    margin-top: 50px; 
     padding: 20px;
     text-align: center;
     color: #777;
-    font-size: 14px;
+    font-size: 0.875rem; 
 }
 
 footer p{
     margin: 0;
+}
+
+/* --- Media Queries for Global Responsiveness --- */
+
+/* Tablet & Smaller Desktop (Max Width: 1024px) */
+@media (max-width: 1024px) {
+    .body-content h1 {
+        font-size: 10vw;
+    }
+    .gallery-text h2 {
+        font-size: 10vw;
+    }
+}
+
+/* Mobile & Tablet (Max Width: 768px) */
+@media (max-width: 768px) {
+    /* Navigation */
+    .navigation-bar {
+        flex-direction: column; 
+        padding: 15px 10px;
+    }
+    .navigation-bar nav {
+        margin-top: 10px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navigation-bar ul {
+        flex-wrap: wrap; 
+        justify-content: center;
+        width: 100%;
+        padding: 8px;
+    }
+    
+    /* Hero Content */
+    .body-content {
+        padding: 80px 20px;
+        min-height: 60vh;
+    }
+    .body-content h1 {
+        font-size: 12vw;
+        letter-spacing: -1px;
+    }
+    .body-content p {
+        font-size: 1rem;
+    }
+    .buttons ul {
+        flex-direction: column; 
+        gap: 10px;
+    }
+
+    /* Content Pictures */
+    .content-pictures {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 3rem;
+    }
+    
+    .gallery-item img {
+        height: 300px;
+    }
+
+    /* Gallery Text */
+    .gallery-text h2 {
+        font-size: 12vw;
+        margin: 50px 0 20px;
+    }
+
+    /* FAQ */
+    .faq-section {
+        padding: 15px;
+        font-size: 1rem;
+    }
+}
+
+/* Specs/Features Grid Collapse (Mobile) */
+@media (max-width: 600px) {
+    .specs-table-grid {
+        /* Forces the grid into a single column for stacking */
+        grid-template-columns: 1fr;
+    }
+    
+    /* Redefine label and value for stacking */
+    .spec-label {
+        background-color: #eef; /* Light blue accent for the label/header */
+        border-bottom: none;
+        font-weight: 700;
+        padding-bottom: 5px; /* Adjust padding for better look when stacked */
+    }
+    
+    .spec-value {
+        border-left: none;
+        border-top: 1px solid #eee;
+        text-align: left;
+        padding-top: 8px;
+        margin-bottom: 15px;
+        background-color: #fff;
+    }
+
+    /* Disable hover background on mobile */
+    .specs-table-grid .spec-row:hover .spec-label,
+    .specs-table-grid .spec-row:hover .spec-value {
+        background-color: #eef; /* Restore stripe color */
+        color: #111;
+        cursor: default;
+    }
+
+    /* Re-apply stripe colors for mobile stack */
+    .specs-table-grid .spec-row:nth-of-type(even) .spec-label {
+        background-color: #fcfcfc;
+    }
+    
+}
+
+/* Extra Small Mobile (Max Width: 480px) */
+@media (max-width: 480px) {
+    .body-content h1 {
+        font-size: 14vw;
+        max-width: 100%;
+    }
+
+    .gallery-text h2 {
+        font-size: 14vw;
+    }
+    
+    /* SPECS Grid Adjustments */
+    .specs-container {
+        padding: 0 10px;
+    }
+    .specs-container h2 {
+        font-size: 1.8rem;
+    }
+    
+    .navigation-bar ul {
+        width: auto; 
+    }
 }
